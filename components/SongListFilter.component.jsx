@@ -7,21 +7,21 @@ import { config } from "../config/constants";
 const languageCategories = config.LanguageCategories;
 const remarkCategories = config.RemarkCategories;
 
-const isActive = (selected, except) => {
-  return selected === except
+const isActive = (selected, execpt) => {
+  return selected == execpt
     ? styles.customCategoryButtonActive
     : styles.customCategoryButton;
 };
 
-const switchState = (setter, selected, except) => {
-  return selected === except ? setter("") : setter(except);
+const switchState = (setter, selected, execpt) => {
+  return selected == execpt ? setter("") : setter(execpt);
 };
 
 export default function SongListFilter({
   categorySelection,
   setLanguageState,
   setRemarkState,
-  // setPaidState,
+  setPaidState,
   setInitialState,
 }) {
   return (
@@ -58,7 +58,7 @@ export default function SongListFilter({
                   <div className="d-grid">
                     <Button
                       className={isActive(categorySelection.lang, language)}
-                      onClick={() => {
+                      onClick={(e) => {
                         switchState(
                           setLanguageState,
                           categorySelection.lang,
@@ -80,7 +80,7 @@ export default function SongListFilter({
                   <div className="d-grid">
                     <Button
                       className={isActive(categorySelection.remark, remark)}
-                      onClick={() => {
+                      onClick={(e) => {
                         switchState(
                           setRemarkState,
                           categorySelection.remark,

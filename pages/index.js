@@ -1,28 +1,21 @@
 import React, { useEffect, useState } from 'react'
-
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-
 import styles from '../styles/Home.module.css'
 import 'react-toastify/dist/ReactToastify.css'
-
 import { Button, Col, Container, Form, Offcanvas, Row, Table } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 import copy from 'copy-to-clipboard'
-
 import MusicList from '../public/music_list.json'
-
 import Banner from '../components/banner/Banner.component'
 import BannerMobile from '../components/banner/BannerMobile.component'
 import SongDetail from '../components/SongDetail.component'
 import BiliPlayerModal from '../components/BiliPlayerModal.component'
 import SongListFilter from '../components/SongListFilter.component'
-
 import imageLoader from '../utils/ImageLoader'
 import * as utils from '../utils/utils'
 import { config } from '../config/constants'
-
 import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
@@ -58,35 +51,35 @@ export default function Home() {
       (utils.include(song.song_name, searchBox) || utils.include(song.language, searchBox) ||
         utils.include(song.remarks, searchBox) || utils.include(song.artist, searchBox)) &&
       //语言过滤按钮
-      (categorySelection.lang !== ""
+      (categorySelection.lang != ""
         ? song.language?.includes(categorySelection.lang)
         : true) &&
       //首字母过滤按钮
-      (categorySelection.initial !== ""
+      (categorySelection.initial != ""
         ? song.initial?.includes(categorySelection.initial)
         : true) &&
       //类型过滤按钮
-      (categorySelection.remark !== ""
+      (categorySelection.remark != ""
         ? song.remarks?.toLowerCase().includes(categorySelection.remark)
         : true) &&
       //付费过滤按钮
-      (categorySelection.paid ? song.paid === 1 : true)
+      (categorySelection.paid ? song.paid == 1 : true)
   );
 
   //处理用户复制行为
   const handleClickToCopy = (song) => {
-    if (song.paid === 1) {
+    if (song.paid == 1) {
       copy("点歌 ￥" + song.song_name);
       toast.success(`付费曲目 ${song.song_name} 成功复制到剪贴板!`);
     } else {
-      copy("宝宝 可以点一首【" + song.song_name + '】吗');
+      copy("点歌 " + song.song_name);
       toast.success(`${song.song_name} 成功复制到剪贴板!`);
     }
   };
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setCategorySelection({ lang: lang, initial: "", paid: categorySelection.paid, remark: categorySelection.remark });
+    setCategorySelection({ lang: lang, initial: "", paid: false, remark: "" });
   };
 
   //改变首字母过滤状态
@@ -94,24 +87,24 @@ export default function Home() {
     setCategorySelection({
       lang: "国语",
       initial: initial,
-      paid: categorySelection.paid,
-      remark: categorySelection.remark,
+      paid: false,
+      remark: "",
     });
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
     setCategorySelection({
-      lang: categorySelection.lang,
-      initial: categorySelection.initial,
-      paid: categorySelection.paid,
+      lang: "",
+      initial: "",
+      paid: false,
       remark: remark,
     });
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setCategorySelection({ lang: categorySelection.lang, initial: categorySelection.initial, paid: paid, remark: categorySelection.remark });
+    setCategorySelection({ lang: "", initial: "", paid: paid, remark: "" });
   };
 
   //随便听听
@@ -122,6 +115,10 @@ export default function Home() {
 
   //移动端自我介绍off canvas开关
   const handleCloseIntro = () => setShowIntro(false);
+  // const handleShowIntro = () => setShowIntro(true);
+  const handleShowIntro = () => {
+    window.open('https://space.bilibili.com/54191665/')
+  }
 
   //滚动到顶部
   const scrollToTop = () => {
@@ -149,10 +146,10 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               <Image
                 loader={imageLoader}
-                src="assets/icon/bilibili_logo_padded.png"
+                src="assets/images/logo1.png"
                 alt="去直播间"
-                width={50}
-                height={50}
+                width={60}
+                height={60}
               />
               <b>
                 <i>直 播 间</i>
@@ -161,42 +158,77 @@ export default function Home() {
           </div>
         </a>
       </Link>
-      <Link href="https://vrp.live/member/Ameki" passHref>
-        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
-          <div className={styles.offCanvasToggleDiv}>
+
+        <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/8643223-%E6%9C%A8%E7%B3%96%E7%BA%AFOfficial"} passHref>
+        <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
+            <div className={styles.goToVupRec}>
             <div className={styles.cornerToggle}>
               <Image
                 loader={imageLoader}
-                src="assets/images/self_intro.png"
-                alt="打开自我介绍"
-                width={50}
-                height={50}
+                src="assets/images/logo2.png"
+                alt="去录播站"
+                width={60}
+                height={60}
               />
               <b>
-                <i>官网介绍</i>
+                <i>VUP录播站</i>
               </b>
             </div>
-          </div>
+            </div>
         </a>
       </Link>
+
+    <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
+        <div className={styles.cornerToggle}>
+          <Image
+            loader={imageLoader}
+            src="assets/images/logo3.png"
+            alt="打开B站主页"
+            width={60}
+            height={60}
+          />
+          <b>
+            <i>B站主页</i>
+          </b>
+        </div>
+      </div>
+
+    <Link href={"https://space.bilibili.com/54191665/channel/seriesdetail?sid=3404042"} passHref>
+        <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
+            <div className={styles.goToBiliRec}>
+            <div className={styles.cornerToggle}>
+              <Image
+                loader={imageLoader}
+                src="assets/images/logo4.png"
+                alt="B站直播回放"
+                width={60}
+                height={60}
+              />
+              <b>
+                <i>B站直播回放</i>
+              </b>
+            </div>
+            </div>
+        </a>
+      </Link>
+
       <Container>
-        <Head>
+        <Head >
           <title>{config.Name}的歌单</title>
           <meta name="keywords" content="B站,bilibili,哔哩哔哩,电台唱见,歌单" />
           <meta name="description" content={`${config.Name}的歌单`} />
-          <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
+          <link rel="icon" type="image/x-icon" href="/favicon.png" ></link>
         </Head>
-
-        <section className={styles.main}>
+        <section className={styles.main} >
           {/** 头像和标题 */}
-          <Row>
+          <Row >
+          <div style={{ marginTop: '6%' }}></div>
             <Banner
               songCount={filteredSongList.length}
-              isFiltered={categorySelection.remark !== "" || categorySelection.lang !== ""}
             />
-          </Row>
+          </Row >
           {/** 过滤器控件 */}
-          <Row>
+          <Row >
             <SongListFilter
               categorySelection={categorySelection}
               setLanguageState={setLanguageState}
@@ -281,13 +313,13 @@ export default function Home() {
         )}
         <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
           <footer className={styles.footer}>
-            <img src="assets/images/github.png" alt="github"></img>
+            <img src="assets/images/github.png"></img>
             <a>{config.Footer}</a>
           </footer>
         </Link>
       </Container>
 
-      <Offcanvas show={showIntro} onHide={handleCloseIntro}>
+      <Offcanvas show={showIntro} onHide={handleCloseIntro} >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{config.Name}的自我介绍</Offcanvas.Title>
         </Offcanvas.Header>
