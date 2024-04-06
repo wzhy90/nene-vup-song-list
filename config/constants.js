@@ -10,7 +10,7 @@ let config = {
     Cursor: false, // 使用自定义光标图片
   
     LanguageCategories: ["日语", "英语"], // 语言分类
-    RemarkCategories: ["原创", "合唱","舰长"], // 标签分类
+    RemarkCategories: ["原创", "合唱","付费"], // 标签分类
   
     BannerTitle: "蝶礼_Deli", // banner 标题
   
