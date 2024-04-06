@@ -140,13 +140,22 @@ export default function Home() {
 
   return (
     <div className={styles.outerContainer}>
-      <Link href={"https://live.bilibili.com/" + config.BiliLiveRoomID} passHref>
+      <div className={styles.headerLinksContainer}>
+        <div className={styles.headerLinksOneSide}>
+        <Link href={"https://live.bilibili.com/" + config.BiliLiveRoomID} passHref>
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
-          <div className={styles.goToLiveDiv}>
+          <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              <Image
+              {/* <Image
                 loader={imageLoader}
                 src="assets/images/logo1.png"
+                alt="去直播间"
+                width={60}
+                height={60}
+              /> */}
+              <Image
+                loader={imageLoader}
+                src="assets/delia/alter1.png"
                 alt="去直播间"
                 width={60}
                 height={60}
@@ -159,13 +168,20 @@ export default function Home() {
         </a>
       </Link>
 
-        <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} passHref>
-        <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
-            <div className={styles.goToVupRec}>
+      <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              <Image
+              {/* <Image
                 loader={imageLoader}
                 src="assets/images/logo2.png"
+                alt="去录播站"
+                width={60}
+                height={60}
+              /> */}
+              <Image
+                loader={imageLoader}
+                src="assets/delia/alter1.png"
                 alt="去录播站"
                 width={60}
                 height={60}
@@ -174,11 +190,13 @@ export default function Home() {
                 <i>VUP录播站</i>
               </b>
             </div>
-            </div>
+          </div>
         </a>
       </Link>
+        </div>
+      
 
-    <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
+      {/* <div className={styles.offCanvasToggleDiv} onClick={handleShowIntro}>
         <div className={styles.cornerToggle}>
           <Image
             loader={imageLoader}
@@ -187,19 +205,59 @@ export default function Home() {
             width={60}
             height={60}
           />
+          <Image
+            loader={imageLoader}
+            src="assets/delia/alter2.png"
+            alt="打开B站主页"
+            width={60}
+            height={60}
+          />
           <b>
             <i>B站主页</i>
           </b>
         </div>
-      </div>
-
-    <Link href={"https://space.bilibili.com/1390615961/channel/series"} passHref>
-        <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
-            <div className={styles.goToBiliRec}>
+      </div> */}
+      <div className={styles.headerLinksOneSide}>
+      <Link href={"https://space.bilibili.com/1390615961/"} passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              <Image
+              {/* <Image
                 loader={imageLoader}
                 src="assets/images/logo3.png"
+                alt="B站直播回放"
+                width={60}
+                height={60}
+              /> */}
+              <Image
+                loader={imageLoader}
+                src="assets/delia/alter2.png"
+                alt="B站主页"
+                width={60}
+                height={60}
+              />
+              <b>
+                <i>B站主页</i>
+              </b>
+            </div>
+          </div>
+        </a>
+      </Link>
+
+      <Link href={"https://space.bilibili.com/1390615961/channel/series"} passHref>
+        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+          <div className={styles.headerLinks}>
+            <div className={styles.cornerToggle}>
+              {/* <Image
+                loader={imageLoader}
+                src="assets/images/logo3.png"
+                alt="B站直播回放"
+                width={60}
+                height={60}
+              /> */}
+              <Image
+                loader={imageLoader}
+                src="assets/delia/alter2.png"
                 alt="B站直播回放"
                 width={60}
                 height={60}
@@ -208,9 +266,11 @@ export default function Home() {
                 <i>B站直播回放</i>
               </b>
             </div>
-            </div>
+          </div>
         </a>
       </Link>
+      </div>
+      </div>
 
       <Container>
         <Head >
@@ -222,7 +282,7 @@ export default function Home() {
         <section className={styles.main} >
           {/** 头像和标题 */}
           <Row >
-          <div style={{ marginTop: '6%' }}></div>
+            <div style={{ marginTop: '6%' }}></div>
             <Banner
               songCount={filteredSongList.length}
             />
