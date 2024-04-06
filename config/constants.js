@@ -1,5 +1,5 @@
 let config = {
-    Name: "蝶礼_Deli", // 主页名字
+    Name: "蝶礼_Delia", // 主页名字
   
     BiliLiveRoomID: "24693792", // 直播间id
   
@@ -12,7 +12,7 @@ let config = {
     LanguageCategories: ["日语", "英语"], // 语言分类
     RemarkCategories: ["原创", "合唱","付费"], // 标签分类
   
-    BannerTitle: "蝶礼_Deli", // banner 标题
+    BannerTitle: "蝶礼_Delia", // banner 标题
   
     BannerContent: [
     ],
@@ -20,15 +20,15 @@ let config = {
     // 自定义按钮 （可以复制生成更多）
     CustomButtons: [
       {
-        link: "https://2some.one/54191665?tag=0",
-		  name: "匿名提问箱",
+        link: "https://www.popibox.cn/u/zmpis7d4",
+		    name: "匿名提问箱",
         image: "/assets/icon/pome.png",
       },
-      {
-        link: "https://weibo.com/",
-        name: "微博",
-        image: "/assets/icon/weibo.png",
-      },
+      // {
+      //   link: "https://weibo.com/",
+      //   name: "微博",
+      //   image: "/assets/icon/weibo.png",
+      // },
       /*{
         link: "https://twitter.com",
         name: "Twitter",
