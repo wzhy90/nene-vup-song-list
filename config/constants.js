@@ -1,7 +1,7 @@
 let config = {
-    Name: "木糖纯Official", // 主页名字
+    Name: "蝶礼_Deli", // 主页名字
   
-    BiliLiveRoomID: "8643223", // 直播间id
+    BiliLiveRoomID: "24693792", // 直播间id
   
     NetEaseMusicId: "", // 网易云音乐id
     QQMusicId: "", // QQ音乐id
@@ -12,7 +12,7 @@ let config = {
     LanguageCategories: ["日语", "英语"], // 语言分类
     RemarkCategories: ["原创", "合唱"], // 标签分类
   
-    BannerTitle: "木糖纯Official", // banner 标题
+    BannerTitle: "蝶礼_Deli", // banner 标题
   
     BannerContent: [
     ],

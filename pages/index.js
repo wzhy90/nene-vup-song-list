@@ -159,7 +159,7 @@ export default function Home() {
         </a>
       </Link>
 
-        <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/8643223-%E6%9C%A8%E7%B3%96%E7%BA%AFOfficial"} passHref>
+        <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} passHref>
         <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
             <div className={styles.goToVupRec}>
             <div className={styles.cornerToggle}>
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
       </div>
 
-    <Link href={"https://space.bilibili.com/54191665/channel/seriesdetail?sid=3404042"} passHref>
+    <Link href={"https://space.bilibili.com/1390615961/channel/series"} passHref>
         <a target="_blank" style={{textDecoration: "none", color: "#1D0C26" }}>
             <div className={styles.goToBiliRec}>
             <div className={styles.cornerToggle}>
