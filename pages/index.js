@@ -182,7 +182,7 @@ export default function Home() {
         <div className={styles.cornerToggle}>
           <Image
             loader={imageLoader}
-            src="assets/images/logo3.png"
+            src="assets/images/logo4.png"
             alt="打开B站主页"
             width={60}
             height={60}
@@ -199,7 +199,7 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               <Image
                 loader={imageLoader}
-                src="assets/images/logo4.png"
+                src="assets/images/logo3.png"
                 alt="B站直播回放"
                 width={60}
                 height={60}
