@@ -70,7 +70,7 @@ export default function Banner({ songCount }) {
         <Image
           loader={imageLoader}
           className={styles.avatar}
-          src="./assets/images/banner_image.webp"
+          src="./assets/images/banner_image.png"
           width={250}
           height={250}
         />
