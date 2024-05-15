@@ -1,7 +1,7 @@
 let config = {
-    Name: "蝶礼_Delia", // 主页名字
+    Name: "猫音ねねーNENE", // 主页名字
   
-    BiliLiveRoomID: "24693792", // 直播间id
+    BiliLiveRoomID: "32639882", // 直播间id
   
     NetEaseMusicId: "", // 网易云音乐id
     QQMusicId: "", // QQ音乐id
@@ -9,21 +9,21 @@ let config = {
   
     Cursor: false, // 使用自定义光标图片
   
-    LanguageCategories: ["日语", "英语", "粤语"], // 语言分类
-    RemarkCategories: ["原创", "合唱","付费"], // 标签分类
+    LanguageCategories: ["中文", "英语"], // 语言分类
+    RemarkCategories: [], // 标签分类
   
-    BannerTitle: "蝶礼_Delia", // banner 标题
+    BannerTitle: "猫音ねねーNENE", // banner 标题
   
     BannerContent: [
     ],
   
     // 自定义按钮 （可以复制生成更多）
     CustomButtons: [
-      {
-        link: "https://www.popibox.cn/u/zmpis7d4",
-		    name: "匿名提问箱",
-        image: "/assets/icon/pome.png",
-      },
+//      {
+//        link: "https://www.popibox.cn/u/zmpis7d4",
+//		    name: "匿名提问箱",
+//        image: "/assets/icon/pome.png",
+//      },
       // {
       //   link: "https://weibo.com/",
       //   name: "微博",

@@ -28,5 +28,5 @@ for index, row in song_df.iterrows():
 with open("../public/music_list.json", 'w') as f:
     f.write(json.dumps(song_list))
 print('生成歌单完成')
-time.sleep(5000)
+#time.sleep(5000)
 

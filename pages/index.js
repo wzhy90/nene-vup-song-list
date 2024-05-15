@@ -85,7 +85,7 @@ export default function Home() {
   //改变首字母过滤状态
   const setInitialState = (initial) => {
     setCategorySelection({
-      lang: "国语",
+      lang: "日语",
       initial: initial,
       paid: false,
       remark: "",
@@ -117,7 +117,7 @@ export default function Home() {
   const handleCloseIntro = () => setShowIntro(false);
   // const handleShowIntro = () => setShowIntro(true);
   const handleShowIntro = () => {
-    window.open('https://space.bilibili.com/54191665/')
+    window.open('https://space.bilibili.com/3546667674503619/')
   }
 
   //滚动到顶部
@@ -134,7 +134,7 @@ export default function Home() {
       setPlayerModalShow(true);
       setPlayerModalSongName(song.song_name);
     } else if (song.url) {
-      window.open('https://music.163.com/#/dj?id=' + song.url)
+      window.open('https://music.163.com/#/song?id=' + song.url)
     }
   }
 
@@ -155,7 +155,7 @@ export default function Home() {
               /> */}
               <Image
                 loader={imageLoader}
-                src="assets/delia/alter1.png"
+                src="assets/nene/alter1.png"
                 alt="去直播间"
                 width={60}
                 height={60}
@@ -168,20 +168,21 @@ export default function Home() {
         </a>
       </Link>
 
+{/*
       <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} passHref>
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              {/* <Image
+              { <Image
                 loader={imageLoader}
                 src="assets/images/logo2.png"
                 alt="去录播站"
                 width={60}
                 height={60}
-              /> */}
+              /> }
               <Image
                 loader={imageLoader}
-                src="assets/delia/alter1.png"
+                src="assets/nene/alter1.png"
                 alt="去录播站"
                 width={60}
                 height={60}
@@ -193,6 +194,7 @@ export default function Home() {
           </div>
         </a>
       </Link>
+*/}
         </div>
       
 
@@ -207,7 +209,7 @@ export default function Home() {
           />
           <Image
             loader={imageLoader}
-            src="assets/delia/alter2.png"
+            src="assets/nene/alter2.png"
             alt="打开B站主页"
             width={60}
             height={60}
@@ -218,7 +220,7 @@ export default function Home() {
         </div>
       </div> */}
       <div className={styles.headerLinksOneSide}>
-      <Link href={"https://space.bilibili.com/1390615961/"} passHref>
+      <Link href={"https://space.bilibili.com/3546667674503619/"} passHref>
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
@@ -231,7 +233,7 @@ export default function Home() {
               /> */}
               <Image
                 loader={imageLoader}
-                src="assets/delia/alter2.png"
+                src="assets/nene/alter2.png"
                 alt="B站主页"
                 width={60}
                 height={60}
@@ -244,20 +246,21 @@ export default function Home() {
         </a>
       </Link>
 
+{/*
       <Link href={"https://space.bilibili.com/1390615961/channel/series"} passHref>
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              {/* <Image
+              { <Image
                 loader={imageLoader}
                 src="assets/images/logo3.png"
                 alt="B站直播回放"
                 width={60}
                 height={60}
-              /> */}
+              /> }
               <Image
                 loader={imageLoader}
-                src="assets/delia/alter2.png"
+                src="assets/nene/alter2.png"
                 alt="B站直播回放"
                 width={60}
                 height={60}
@@ -269,6 +272,7 @@ export default function Home() {
           </div>
         </a>
       </Link>
+*/}
       </div>
       </div>
 
