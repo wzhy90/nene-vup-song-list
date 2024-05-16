@@ -28,7 +28,7 @@ export default function Banner({ songCount }) {
         >
           <Image
             loader={imageLoader}
-            src="./assets/icon/163_music.ico"
+            src="./assets/icon/163_music.webp"
             alt={config.Name + "的网易云音乐主页链接"}
             width={24}
             height={24}
@@ -52,7 +52,7 @@ export default function Banner({ songCount }) {
         >
           <Image
             loader={imageLoader}
-            src="./assets/icon/qq_music.ico"
+            src="./assets/icon/qq_music.webp"
             alt={config.Name + "的QQ音乐主页链接"}
             width={24}
             height={24}
@@ -70,7 +70,7 @@ export default function Banner({ songCount }) {
         <Image
           loader={imageLoader}
           className={styles.avatar}
-          src="./assets/images/banner_image.png"
+          src="./assets/images/banner_image.webp"
           width={250}
           height={250}
         />

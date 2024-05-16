@@ -148,14 +148,14 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               {/* <Image
                 loader={imageLoader}
-                src="assets/images/logo1.png"
+                src="assets/images/logo1.webp"
                 alt="去直播间"
                 width={60}
                 height={60}
               /> */}
               <Image
                 loader={imageLoader}
-                src="assets/nene/alter1.png"
+                src="assets/nene/alter1.webp"
                 alt="去直播间"
                 width={60}
                 height={60}
@@ -175,14 +175,14 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               { <Image
                 loader={imageLoader}
-                src="assets/images/logo2.png"
+                src="assets/images/logo2.webp"
                 alt="去录播站"
                 width={60}
                 height={60}
               /> }
               <Image
                 loader={imageLoader}
-                src="assets/nene/alter1.png"
+                src="assets/nene/alter1.webp"
                 alt="去录播站"
                 width={60}
                 height={60}
@@ -202,14 +202,14 @@ export default function Home() {
         <div className={styles.cornerToggle}>
           <Image
             loader={imageLoader}
-            src="assets/images/logo4.png"
+            src="assets/images/logo4.webp"
             alt="打开B站主页"
             width={60}
             height={60}
           />
           <Image
             loader={imageLoader}
-            src="assets/nene/alter2.png"
+            src="assets/nene/alter2.webp"
             alt="打开B站主页"
             width={60}
             height={60}
@@ -226,14 +226,14 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               {/* <Image
                 loader={imageLoader}
-                src="assets/images/logo3.png"
+                src="assets/images/logo3.webp"
                 alt="B站直播回放"
                 width={60}
                 height={60}
               /> */}
               <Image
                 loader={imageLoader}
-                src="assets/nene/alter2.png"
+                src="assets/nene/alter2.webp"
                 alt="B站主页"
                 width={60}
                 height={60}
@@ -253,14 +253,14 @@ export default function Home() {
             <div className={styles.cornerToggle}>
               { <Image
                 loader={imageLoader}
-                src="assets/images/logo3.png"
+                src="assets/images/logo3.webp"
                 alt="B站直播回放"
                 width={60}
                 height={60}
               /> }
               <Image
                 loader={imageLoader}
-                src="assets/nene/alter2.png"
+                src="assets/nene/alter2.webp"
                 alt="B站直播回放"
                 width={60}
                 height={60}
@@ -281,7 +281,7 @@ export default function Home() {
           <title>{config.Name}的歌单</title>
           <meta name="keywords" content="B站,bilibili,哔哩哔哩,电台唱见,歌单" />
           <meta name="description" content={`${config.Name}的歌单`} />
-          <link rel="icon" type="image/x-icon" href="/favicon.png" ></link>
+          <link rel="icon" type="image/x-icon" href="/favicon.webp" ></link>
         </Head>
         <section className={styles.main} >
           {/** 头像和标题 */}
@@ -377,7 +377,7 @@ export default function Home() {
         )}
         <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
           <footer className={styles.footer}>
-            <img src="assets/images/github.png"></img>
+            <img src="assets/images/github.webp"></img>
             <a>{config.Footer}</a>
           </footer>
         </Link>

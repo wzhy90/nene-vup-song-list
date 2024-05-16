@@ -22,17 +22,17 @@ let config = {
 //      {
 //        link: "https://www.popibox.cn/u/zmpis7d4",
 //		    name: "匿名提问箱",
-//        image: "/assets/icon/pome.png",
+//        image: "/assets/icon/pome.webp",
 //      },
       // {
       //   link: "https://weibo.com/",
       //   name: "微博",
-      //   image: "/assets/icon/weibo.png",
+      //   image: "/assets/icon/weibo.webp",
       // },
       /*{
         link: "https://twitter.com",
         name: "Twitter",
-        image: "/assets/icon/th.png",
+        image: "/assets/icon/th.webp",
       },*/
     ],
 };

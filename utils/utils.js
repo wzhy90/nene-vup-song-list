@@ -5,7 +5,7 @@ const include = (obj1, obj2) => {
 }
 
 const getCursor = () => {
-    return config.Cursor ? 'url("./assets/cursor/pointer.png"), pointer' : ''
+    return config.Cursor ? 'url("./assets/cursor/pointer.webp"), pointer' : ''
 }
 
 module.exports = { include, getCursor };
