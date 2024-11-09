@@ -246,21 +246,13 @@ export default function Home() {
         </a>
       </Link>
 
-{/*
-      <Link href={"https://space.bilibili.com/1390615961/channel/series"} passHref>
+      <Link href={"https://space.bilibili.com/3546689558285012/video"} passHref>
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              { <Image
-                loader={imageLoader}
-                src="assets/images/logo3.webp"
-                alt="B站直播回放"
-                width={60}
-                height={60}
-              /> }
               <Image
                 loader={imageLoader}
-                src="assets/nene/alter2.webp"
+                src="assets/nene/record.webp"
                 alt="B站直播回放"
                 width={60}
                 height={60}
@@ -272,7 +264,7 @@ export default function Home() {
           </div>
         </a>
       </Link>
-*/}
+
       </div>
       </div>
 

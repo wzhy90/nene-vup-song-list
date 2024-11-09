@@ -9,7 +9,7 @@ let config = {
   
     Cursor: false, // 使用自定义光标图片
   
-    LanguageCategories: ["舰长", "琵琶", "SC"], // 语言分类
+    LanguageCategories: ["英语", "中文", "舰长", "SC"], // 语言分类
     RemarkCategories: [], // 标签分类
   
     BannerTitle: "猫音ねねーNENE", // banner 标题
