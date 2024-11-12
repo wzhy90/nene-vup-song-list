@@ -21,7 +21,6 @@
 
 .main {
   min-height: 86vh;
-  margin-top: -10px;
 }
 
 .grandTitle {
@@ -224,6 +223,9 @@
     width: 55%;
     opacity: 0;
     transition: opacity 1s;
+    display: flex;
+    height: 90%;
+    align-items: center;
   }
 
   .introBoxInnerDiv {
@@ -324,7 +326,7 @@
   position: absolute;
   /* cursor: url("/assets/cursor/pointer.webp"), pointer; */
   top: 0.25rem;
-  left: 20%;
+  left: 0.25rem;
   z-index: 1;
   border-radius: 5px;
 }
@@ -359,7 +361,7 @@
   position: absolute;
   /* cursor: url("/assets/cursor/pointer.webp"), pointer; */
   top: 0.25rem;
-  right: 20%;
+  right: 0.25rem;
   z-index: 1;
   border-radius: 5px;
 }

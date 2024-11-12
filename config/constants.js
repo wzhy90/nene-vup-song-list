@@ -9,8 +9,8 @@ let config = {
   
     Cursor: false, // 使用自定义光标图片
   
-    LanguageCategories: ["英语", "中文", "舰长", "SC"], // 语言分类
-    RemarkCategories: [], // 标签分类
+    LanguageCategories: ["英语", "中文"], // 语言分类
+    RemarkCategories: ["舰长", "SC"], // 标签分类
   
     BannerTitle: "猫音ねねーNENE", // banner 标题
   

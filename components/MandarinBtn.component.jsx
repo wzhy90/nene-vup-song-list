@@ -21,7 +21,7 @@ export default function MandarinBtn({
   return (
     <div className="d-grid">
       <SplitButton
-        title="日语"
+        title={initialFilter === "" ? "日语" : `日语（${initialFilter}）`}
         className={
           languageFilter == "日语"
             ? styles.mandarinBtnActive
@@ -33,16 +33,16 @@ export default function MandarinBtn({
             : setLanguageState("日语");
         }}
       >
-        {availableAlphabets.map((alphabet) => {
+        {availableAlphabets.sort().map((alphabet) => {
           return (
             <Dropdown.Item
               onClick={(e) => {
-                initialFilter == alphabet
+                initialFilter === alphabet
                   ? setInitialState("")
                   : setInitialState(alphabet);
               }}
               style={
-                initialFilter == alphabet
+                initialFilter === alphabet
                   ? {
                       backgroundColor: activeColor,
                       cursor: getCursor(),

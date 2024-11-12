@@ -1,21 +1,28 @@
 import React, { useEffect, useState } from 'react'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
 import 'react-toastify/dist/ReactToastify.css'
+
 import { Button, Col, Container, Form, Offcanvas, Row, Table } from 'react-bootstrap'
 import { toast } from 'react-toastify'
 import copy from 'copy-to-clipboard'
+
 import MusicList from '../public/music_list.json'
+
 import Banner from '../components/banner/Banner.component'
 import BannerMobile from '../components/banner/BannerMobile.component'
 import SongDetail from '../components/SongDetail.component'
 import BiliPlayerModal from '../components/BiliPlayerModal.component'
 import SongListFilter from '../components/SongListFilter.component'
+
 import imageLoader from '../utils/ImageLoader'
 import * as utils from '../utils/utils'
 import { config } from '../config/constants'
+
 import { Analytics } from '@vercel/analytics/react';
 
 export default function Home() {
@@ -51,25 +58,25 @@ export default function Home() {
       (utils.include(song.song_name, searchBox) || utils.include(song.language, searchBox) ||
         utils.include(song.remarks, searchBox) || utils.include(song.artist, searchBox)) &&
       //语言过滤按钮
-      (categorySelection.lang != ""
+      (categorySelection.lang !== ""
         ? song.language?.includes(categorySelection.lang)
         : true) &&
       //首字母过滤按钮
-      (categorySelection.initial != ""
+      (categorySelection.initial !== ""
         ? song.initial?.includes(categorySelection.initial)
         : true) &&
       //类型过滤按钮
-      (categorySelection.remark != ""
-        ? song.remarks?.toLowerCase().includes(categorySelection.remark)
+      (categorySelection.remark !== ""
+        ? song.remarks?.includes(categorySelection.remark)
         : true) &&
       //付费过滤按钮
-      (categorySelection.paid ? song.paid == 1 : true)
+      (categorySelection.paid ? song.paid === 1 : true)
   );
 
   //处理用户复制行为
   const handleClickToCopy = (song) => {
-    if (song.paid == 1) {
-      copy("点歌 ￥" + song.song_name);
+    if (song.paid === 1) {
+      copy("点歌 " + song.song_name);
       toast.success(`付费曲目 ${song.song_name} 成功复制到剪贴板!`);
     } else {
       copy("点歌 " + song.song_name);
@@ -79,7 +86,7 @@ export default function Home() {
 
   //改变语言过滤状态
   const setLanguageState = (lang) => {
-    setCategorySelection({ lang: lang, initial: "", paid: false, remark: "" });
+    setCategorySelection({ lang: lang, initial: "", paid: categorySelection.paid, remark: categorySelection.remark });
   };
 
   //改变首字母过滤状态
@@ -87,24 +94,24 @@ export default function Home() {
     setCategorySelection({
       lang: "日语",
       initial: initial,
-      paid: false,
-      remark: "",
+      paid: categorySelection.paid,
+      remark: categorySelection.remark,
     });
   };
 
   //改变备注过滤状态
   const setRemarkState = (remark) => {
     setCategorySelection({
-      lang: "",
-      initial: "",
-      paid: false,
+      lang: categorySelection.lang,
+      initial: categorySelection.initial,
+      paid: categorySelection.paid,
       remark: remark,
     });
   };
 
   //改变收费过滤状态
   const setPaidState = (paid) => {
-    setCategorySelection({ lang: "", initial: "", paid: paid, remark: "" });
+    setCategorySelection({ lang: categorySelection.lang, initial: categorySelection.initial, paid: paid, remark: categorySelection.remark });
   };
 
   //随便听听
@@ -116,9 +123,9 @@ export default function Home() {
   //移动端自我介绍off canvas开关
   const handleCloseIntro = () => setShowIntro(false);
   // const handleShowIntro = () => setShowIntro(true);
-  const handleShowIntro = () => {
-    window.open('https://space.bilibili.com/3546667674503619/')
-  }
+  // const handleShowIntro = () => {
+  //   window.open('https://space.bilibili.com/3546667674503619/')
+  // }
 
   //滚动到顶部
   const scrollToTop = () => {
@@ -146,19 +153,12 @@ export default function Home() {
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              {/* <Image
-                loader={imageLoader}
-                src="assets/images/logo1.webp"
-                alt="去直播间"
-                width={60}
-                height={60}
-              /> */}
               <Image
                 loader={imageLoader}
                 src="assets/nene/alter1.webp"
                 alt="去直播间"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               />
               <b>
                 <i>直 播 间</i>
@@ -224,19 +224,12 @@ export default function Home() {
         <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
-              {/* <Image
-                loader={imageLoader}
-                src="assets/images/logo3.webp"
-                alt="B站直播回放"
-                width={60}
-                height={60}
-              /> */}
               <Image
                 loader={imageLoader}
                 src="assets/nene/alter2.webp"
                 alt="B站主页"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               />
               <b>
                 <i>B站主页</i>
@@ -254,8 +247,8 @@ export default function Home() {
                 loader={imageLoader}
                 src="assets/nene/record.webp"
                 alt="B站直播回放"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
               />
               <b>
                 <i>B站直播回放</i>
@@ -275,16 +268,17 @@ export default function Home() {
           <meta name="description" content={`${config.Name}的歌单`} />
           <link rel="icon" type="image/x-icon" href="/favicon.ico" ></link>
         </Head>
-        <section className={styles.main} >
+
+        <section className={styles.main}>
           {/** 头像和标题 */}
-          <Row >
-            <div style={{ marginTop: '6%' }}></div>
+          <Row>
             <Banner
               songCount={filteredSongList.length}
+              isFiltered={categorySelection.remark !== "" || categorySelection.lang !== ""}
             />
-          </Row >
+          </Row>
           {/** 过滤器控件 */}
-          <Row >
+          <Row>
             <SongListFilter
               categorySelection={categorySelection}
               setLanguageState={setLanguageState}
@@ -369,13 +363,13 @@ export default function Home() {
         )}
         <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
           <footer className={styles.footer}>
-            <img src="assets/images/github.webp"></img>
+            <img src="assets/images/github.webp" alt="github"></img>
             <a>{config.Footer}</a>
           </footer>
         </Link>
       </Container>
 
-      <Offcanvas show={showIntro} onHide={handleCloseIntro} >
+      <Offcanvas show={showIntro} onHide={handleCloseIntro}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>{config.Name}的自我介绍</Offcanvas.Title>
         </Offcanvas.Header>
