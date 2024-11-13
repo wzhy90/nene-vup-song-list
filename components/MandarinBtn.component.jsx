@@ -5,7 +5,7 @@ import { getCursor } from "../utils/utils";
 import MusicList from "../public/music_list.json";
 
 const activeColor = "#BEA5C1";
-let availableAlphabets = [];
+let availableAlphabets = ["0-9"];
 MusicList.forEach((x) => {
   if (x.initial.length === 1 && availableAlphabets.indexOf(x.initial) === -1) {
     availableAlphabets.push(x.initial)
