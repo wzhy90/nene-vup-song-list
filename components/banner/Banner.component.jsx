@@ -17,8 +17,7 @@ import BannerButton from "./BannerButton.component";
 export default function Banner({ songCount, isFiltered = false }) {
   const netEaseMusicComponent = (id) => {
     return id ? (
-      <Link href={"https://music.163.com/#/artist?id=" + id} passHref>
-        <a
+      <Link href={"https://music.163.com/#/artist?id=" + id}
           target="_blank"
           style={{
             marginRight: "1rem",
@@ -33,7 +32,6 @@ export default function Banner({ songCount, isFiltered = false }) {
             width={24}
             height={24}
           />
-        </a>
       </Link>
     ) : (
       ""
@@ -42,8 +40,7 @@ export default function Banner({ songCount, isFiltered = false }) {
 
   const qqMusicComponent = (id) => {
     return id ? (
-      <Link href={"https://y.qq.com/n/ryqq/singer/" + id} passHref>
-        <a
+      <Link href={"https://y.qq.com/n/ryqq/singer/" + id}
           target="_blank"
           style={{
             cursor: getCursor(),
@@ -57,7 +54,6 @@ export default function Banner({ songCount, isFiltered = false }) {
             width={24}
             height={24}
           />
-        </a>
       </Link>
     ) : (
       ""

@@ -149,8 +149,7 @@ export default function Home() {
     <div className={styles.outerContainer}>
       <div className={styles.headerLinksContainer}>
         <div className={styles.headerLinksOneSide}>
-        <Link href={"https://live.bilibili.com/" + config.BiliLiveRoomID} passHref>
-        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+        <Link href={"https://live.bilibili.com/" + config.BiliLiveRoomID} target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
               <Image
@@ -165,12 +164,10 @@ export default function Home() {
               </b>
             </div>
           </div>
-        </a>
       </Link>
 
 {/*
-      <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} passHref>
-        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+      <Link href={"https://vuprec.waitsaber.org/%E5%AD%98%E5%82%A81/24693792-%E8%9D%B6%E7%A4%BC_Delia"} target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
               { <Image
@@ -192,7 +189,6 @@ export default function Home() {
               </b>
             </div>
           </div>
-        </a>
       </Link>
 */}
         </div>
@@ -220,8 +216,7 @@ export default function Home() {
         </div>
       </div> */}
       <div className={styles.headerLinksOneSide}>
-      <Link href={"https://space.bilibili.com/3546667674503619/"} passHref>
-        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+      <Link href={"https://space.bilibili.com/3546667674503619/"} target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
               <Image
@@ -236,11 +231,9 @@ export default function Home() {
               </b>
             </div>
           </div>
-        </a>
       </Link>
 
-      <Link href={"https://space.bilibili.com/3546689558285012/video"} passHref>
-        <a target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
+      <Link href={"https://space.bilibili.com/3546689558285012/video"} target="_blank" style={{ textDecoration: "none", color: "#1D0C26" }}>
           <div className={styles.headerLinks}>
             <div className={styles.cornerToggle}>
               <Image
@@ -255,7 +248,6 @@ export default function Home() {
               </b>
             </div>
           </div>
-        </a>
       </Link>
 
       </div>
@@ -361,11 +353,9 @@ export default function Home() {
         ) : (
           <div></div>
         )}
-        <Link href={"https://github.com/Rndlab/vup-song-list-main"} passHref>
-          <footer className={styles.footer}>
+        <Link href={"https://github.com/Rndlab/vup-song-list-main"} target="_blank" className={styles.footer}>
             <img src="assets/images/github.webp" alt="github"></img>
-            <a>{config.Footer}</a>
-          </footer>
+            <span>{config.Footer}</span>
         </Link>
       </Container>
 
