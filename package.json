@@ -1,14 +1,11 @@
 {
   "name": "vup-song-list",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "node scripts/converter.js && next dev",
     "build": "node scripts/converter.js && next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export",
-    "buildssg": "node scripts/converter.js && next build && next export"
+    "start": "next start"
   },
   "dependencies": {
     "@cloudbase/cli": "^2.12.1",

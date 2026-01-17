@@ -1,13 +1,14 @@
-module.exports = {
+const nextConfig = {
+  output: 'export',
   trailingSlash: true,
-  swcMinify: false,
-  exportPathMap: function () {
-    return {
-      '/': {page: "/"},
-      '/404': {page: "/404"}
-    }
-  },
+
   images: {
-    loader: "custom"
-  }
+    loader: "custom",
+    unoptimized: true, 
+  },
+
+  // basePath: '/nene-vup-song-list',
+  // assetPrefix: '/nene-vup-song-list/',
 };
+
+module.exports = nextConfig;
