@@ -92,7 +92,7 @@ export default function Home() {
   //改变首字母过滤状态
   const setInitialState = (initial) => {
     setCategorySelection({
-      lang: "日语",
+      lang: categorySelection.lang,
       initial: initial,
       paid: categorySelection.paid,
       remark: categorySelection.remark,
