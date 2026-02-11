@@ -4,11 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
-package-lock.json
 yarn.lock
 
 # testing
 /coverage
+
+public/music_list.json
 
 # next.js
 /.next/
@@ -19,6 +20,7 @@ yarn.lock
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 
 # debug
