@@ -11,7 +11,14 @@ const wanakana = require('wanakana');
                     .forEach(f => cnchar.use(f));
 
 const toPinyin = str => cnchar.spell(str);
-const toRomaji = str => wanakana.toRomaji(str, { customRomajiMapping: { '暁': 'xi', '雑': 'za' }});
+const toRomaji = str => wanakana.toRomaji(str, {
+                    customRomajiMapping: { '暁': 'xi',
+                        '雑': 'za',
+                        '駅': 'eki',
+                        '悪': 'aku',
+                        '瑠': 'ryu',
+                        '黒': 'kuro',
+                        '仮': 'ka' }});
 
 const src = path.resolve(__dirname, './music.xlsx')
 const dest = path.resolve(__dirname, '../public/music_list.json')
@@ -44,8 +51,10 @@ const loadMusicList = async ({src, dest}) => {
             song_data.initial = toPinyin(song_name).slice(0, 1).toUpperCase()
 
             if (song_data.initial.toLowerCase() === song_data.initial) {
-                if ( wanakana.isJapanese(song_name) ) {
-                    song_data.initial = toRomaji(song_name).slice(0, 1).toUpperCase()
+                const romajiName = toRomaji(song_name);
+                const firstMatch = romajiName.match(/[a-zA-Z]/);
+                if ( firstMatch ) {
+                    song_data.initial = firstMatch[0].toUpperCase();
                 } else {
                     song_data.initial = '0-9'
                 }
