@@ -255,7 +255,7 @@ export default function Home() {
 
       <Container>
         <Head >
-          <title>{config.Name}的歌单</title>
+          <title>{`${config.Name}的歌单`}</title>
           <meta name="keywords" content="B站,bilibili,哔哩哔哩,电台唱见,歌单" />
           <meta name="description" content={`${config.Name}的歌单`} />
           <link rel="icon" type="image/x-icon" href="/favicon.ico" ></link>
