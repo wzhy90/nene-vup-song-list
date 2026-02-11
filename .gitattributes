@@ -1,2 +1,3 @@
+config/constants.js merge=ours
 scripts/music.xlsx merge=ours
 public/** merge=ours
