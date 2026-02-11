@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@cloudbase/cli": "^2.12.1",
+    "@cloudbase/cli": "^2.12.2",
     "@vercel/analytics": "1.6.1",
     "bootstrap": "^5.3.8",
     "cnchar": "^3.2.6",
@@ -16,15 +16,15 @@
     "cnchar-trad": "^3.2.6",
     "copy-to-clipboard": "^3.3.3",
     "exceljs": "^4.4.0",
-    "next": "16.1.3",
-    "react": "19.2.3",
+    "next": "16.1.6",
+    "react": "19.2.4",
     "react-bootstrap": "^2.10.10",
-    "react-dom": "19.2.3",
+    "react-dom": "19.2.4",
     "react-toastify": "^11.0.5",
     "wanakana": "^5.3.1"
   },
   "devDependencies": {
-    "eslint": "9.39.2",
-    "eslint-config-next": "16.1.3"
+    "eslint": "10.0.0",
+    "eslint-config-next": "16.1.6"
   }
 }
